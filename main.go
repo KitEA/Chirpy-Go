@@ -5,10 +5,14 @@ import (
 	"net/http"
 )
 
+const PORT = 8080
+
 func main() {
 	mux := http.NewServeMux()
+	mux.Handle("/", http.FileServer(http.Dir(".")))
+
 	s := &http.Server{
-		Addr:    ":8080",
+		Addr:    fmt.Sprintf("%s%d", ":", PORT),
 		Handler: mux,
 	}
 	s.ListenAndServe()

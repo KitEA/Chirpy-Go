@@ -23,6 +23,7 @@ go.work.sum
 
 # Ignore all files except go files
 **/*
+!**/*.html
 !**/*.go
 !**/*.mod
 !**/
